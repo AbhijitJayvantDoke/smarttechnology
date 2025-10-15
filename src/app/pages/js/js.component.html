@@ -1,0 +1,29 @@
+<div class="main">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>JavaScript Notes</h3>
+        <ul>
+            <li *ngFor="let topic of topicKeys" (click)="selectTopic(topic)" [class.active]="selectedTopic === topic"
+                tabindex="0" (keyup.enter)="selectTopic(topic)">
+                {{ topic }}
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h1 class="page-title">{{ selectedTopic }}</h1>
+        <p class="subtitle">{{ notes[selectedTopic].summary || 'Select a topic to view summary.' }}</p>
+
+        <div class="example-box">
+            <h2>Details & Examples</h2>
+            <pre><code>{{ notes[selectedTopic].details || 'Select a topic to view details.' }}</code></pre>
+        </div>
+    </section>
+</div>
+>
+
+
+
+
+<app-footer></app-footer>

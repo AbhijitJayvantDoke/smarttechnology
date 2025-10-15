@@ -1,0 +1,34 @@
+<div class="main">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h3>HTML Tutorial</h3>
+    <ul>
+      <li *ngFor="let note of htmlNotes">{{ note }}</li>
+    </ul>
+  </aside>
+
+  <!-- Content Section -->
+  <section class="content">
+    <h1 class="page-title">HTML Learning Playground</h1>
+    <p class="subtitle">Click a topic below to view an example instantly</p>
+
+    <div class="button-group">
+      <button
+        *ngFor="let key of topicKeys"
+        class="topic-btn"
+        (click)="showExample(key)"
+        [class.active]="selectedExampleKey === key"
+      >
+        {{ examples[key].title }}
+      </button>
+    </div>
+
+    <div class="example-box">
+      <h2>{{ selectedExample?.title || 'Select a topic' }}</h2>
+      <pre><code>{{ selectedExample?.code || 'Click any topic button to see an example here.' }}</code></pre>
+    </div>
+  </section>
+</div>
+
+
+<app-footer></app-footer>

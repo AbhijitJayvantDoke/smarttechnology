@@ -1,0 +1,56 @@
+.coming-soon {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f6fc;
+}
+
+.coming-soon h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  color: #66bb6a;
+}
+
+.dots span {
+  animation: blink 1.4s infinite;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.dots span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.dots span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive font sizing */
+@media (max-width: 600px) {
+  .coming-soon h1 {
+    font-size: 1.5rem;
+  }
+
+  .dots {
+    font-size: 1.5rem;
+  }
+}

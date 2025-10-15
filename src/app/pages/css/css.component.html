@@ -1,0 +1,36 @@
+<div class="main">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>CSS Tutorial</h3>
+        <ul>
+            <li *ngFor="let topic of cssTopics">{{ topic.title }}</li>
+        </ul>
+    </aside>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h1 class="page-title">CSS Learning Playground</h1>
+        <p class="subtitle">Click a topic below to view an example instantly</p>
+
+        <div class="button-group">
+            <button *ngFor="let topic of cssTopics" class="topic-btn" (click)="showExample(topic)"
+                [class.active]="selectedTopic === topic">
+                {{ topic.title }}
+            </button>
+        </div>
+
+        <div class="example-box" *ngIf="selectedTopic">
+            <h2>{{ selectedTopic.title }}</h2>
+            <pre><code>{{ selectedTopic.example }}</code></pre>
+        </div>
+        <div class="example-box" *ngIf="!selectedTopic">
+            <h2>Select a topic</h2>
+            <p>Click any topic button to see an example here.</p>
+        </div>
+    </section>
+</div>
+
+
+
+
+<app-footer></app-footer>
