@@ -16,6 +16,8 @@
             "outputPath": "dist/smarttechnology",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/smarttechnology/",
+
             "polyfills": [
               "zone.js"
             ],
@@ -91,6 +93,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
